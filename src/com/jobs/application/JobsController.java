@@ -25,24 +25,27 @@ public class JobsController {
 			return (Employee) employee;
 		}
 
-	public void createBoss(String name, String address, String phone, double salaryPerMonth) throws Exception
+	public Employee createBoss(String name, String address, String phone, double salaryPerMonth) throws Exception
 		{
 			AbsStaffMember boss = new Employee(name, address, phone, salaryPerMonth,
 					PaymentFactory.createPaymentRateBoss());
 			repository.addMember(boss);
+			return (Employee) boss;
 		}
 
-	public void createManager(String name, String address, String phone, double salaryPerMonth) throws Exception
+	public Employee createManager(String name, String address, String phone, double salaryPerMonth) throws Exception
 		{
 			AbsStaffMember manager = new Employee(name, address, phone, salaryPerMonth,
 					PaymentFactory.createIPaymentRateManager());
 			repository.addMember(manager);
+			return (Employee) manager;
 		}
 
-	public void createVolunteer(String name, String address, String phone, String description) throws Exception
+	public Volunteer createVolunteer(String name, String address, String phone, String description) throws Exception
 		{
 			AbsStaffMember volunteer = new Volunteer(name, address, phone, description);
 			repository.addMember(volunteer);
+			return (Volunteer) volunteer;
 
 		}
 
